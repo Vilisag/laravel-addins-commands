@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Services;
+
+use App\Repositories\Contracts\YourNameRepository;
+
+class YourNameService extends BaseService
+{
+    public function __construct(YourNameRepository $repository)
+    {
+        parent::__construct($repository);
+    }
+}

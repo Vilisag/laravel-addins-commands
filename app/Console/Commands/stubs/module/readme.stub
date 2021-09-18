@@ -1,0 +1,38 @@
+# INSTALL
+
+1. YourName package
+
+* Add this line `"YourName\\": "modules/your_name/src/"` into file `composer.json`
+
+~~~bash
+    .......
+    "autoload": {
+        "psr-4": {
+            .....
+            "YourName\\": "modules/your_name/src/"
+        },
+        .....
+    },
+    .......
+~~~
+
+* Run these commands in webroot folder
+
+~~~bash
+    $ composer dump-autoload -o
+~~~
+
+* Add this line `\YourName\YourNameServiceProvider::class,` into file `config/app.php`
+
+~~~php
+    'providers' => [
+
+        /*
+         * Application Service Providers...
+         */
+        
+        //.....
+        
+        \YourName\YourNameServiceProvider::class,
+    ],
+~~~

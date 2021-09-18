@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Services;
+
+use App\Repositories\Contracts\BaseRepository;
+
+class BaseService
+{
+    protected $repo;
+
+    public function __construct(BaseRepository $repository)
+    {
+        $this->repo = $repository;
+    }
+
+    public function save(array $data, $id = null)
+    {
+        return $id == null ? $this->repo->create($data) :
+            $this->repo->update($id, $data);
+    }
+
+    public function __call($method, $arguments)
+    {
+        return $this->repo->$method(...$arguments);
+    }
+}

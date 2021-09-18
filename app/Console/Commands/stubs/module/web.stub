@@ -1,0 +1,7 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::group(['prefix' => 'your_name', 'namespace' => 'YourName\\Http\\Controllers'], function() {
+    //
+});

@@ -1,0 +1,27 @@
+{
+    "name": "modules/your_name",
+    "description": "Description here....",
+    "license": "MIT",
+    "autoload": {
+        "files": [],
+        "psr-4": {
+            "YourName\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Author Name Here",
+            "email": "author@email.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "YourName\\YourNameServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}

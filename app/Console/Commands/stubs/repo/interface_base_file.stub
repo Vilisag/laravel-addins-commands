@@ -1,0 +1,75 @@
+<?php
+
+namespace App\Repositories\Contracts;
+
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
+
+interface BaseRepository
+{
+    public function all();
+
+    public function count();
+
+    public function create(array $data);
+
+    public function delete(int $id);
+
+    public function doesntHave($relation);
+
+    public function find(int $id);
+
+    public function firstOrCreate(array $data = []);
+
+    public function findOrFail(int $id);
+
+    public function firstOrNew(array $data = []);
+
+    public function findWhere(array $criteria);
+
+    public function get(array $columns = ['*']): Collection;
+
+    public function has($relation);
+
+    public function limit($limit);
+
+    public function model();
+
+    public function orderBy(string $column, $order = 'asc');
+
+    public function select(array $columns = ['*']);
+
+    public function paginate(int $limit = 15);
+
+    public function query();
+
+    public function queryBuilder(): Builder;
+
+    public function simplePaginate($limit = 15);
+
+    public function show(int $id);
+
+    public function update(int $id, array $data);
+
+    public function updateOrCreate(array $data, array $values = []);
+
+    public function where(array $criteria);
+
+    public function whereDoesntHave($relation, $closure);
+
+    public function whereExists($clause);
+
+    public function whereHas($relation, $closure);
+
+    public function whereIn(string $column, array $values);
+
+    public function whereNotIn(string $column, array $values);
+
+    public function whereNull(string $column);
+
+    public function whereNotNull(string $column);
+
+    public function with($relations);
+
+    public function withCount($relations);
+}
